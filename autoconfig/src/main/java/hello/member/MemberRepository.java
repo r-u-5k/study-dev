@@ -20,14 +20,17 @@ public class MemberRepository {
     }
 
     public void save(Member member) {
-        template.update("insert into member(member_id, name) values(?, ?)", member.getMemberId(), member.getName());
+        template.update("insert into member(member_id, name) values(?, ?)",
+                member.getMemberId(), member.getName());
     }
 
     public Member find(String memberId) {
-        return template.queryForObject("select member_id, name from Member where member_id = ?", BeanPropertyRowMapper.newInstance(Member.class), memberId);
+        return template.queryForObject("select member_id, name from Member where member_id = ?",
+                BeanPropertyRowMapper.newInstance(Member.class), memberId);
     }
 
     public List<Member> findAll() {
-        return template.query("select member_id, name from Member", BeanPropertyRowMapper.newInstance(Member.class));
+        return template.query("select member_id, name from Member",
+                BeanPropertyRowMapper.newInstance(Member.class));
     }
 }
