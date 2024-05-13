@@ -5,3 +5,5 @@ S
 #src/main/java/hellojpa/JpaMain.java,3\8\3818751ba7a7e2bbfde51b6c3126a02f97f5a644
 R
 "src/main/java/hellojpa/Member.java,f\d\fd68fd8c0388b07c61445afa503c8ec018eab4c0
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
