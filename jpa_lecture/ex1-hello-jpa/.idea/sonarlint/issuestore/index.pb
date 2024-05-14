@@ -7,3 +7,8 @@ R
 "src/main/java/hellojpa/Member.java,f\d\fd68fd8c0388b07c61445afa503c8ec018eab4c0
 S
 #.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+T
+$src/main/java/hellojpa/RoleType.java,e\1\e151b821dadfe54a14fa67f5f3fe359bdad10ecc
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302

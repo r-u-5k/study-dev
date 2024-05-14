@@ -13,8 +13,10 @@ public class JpaMain {
         tx.begin();
 
         try {
-            Member findMember = em.find(Member.class, 1L);
-            findMember.setName("HelloJPA");
+            Member member = new Member();
+            member.setName("A");
+
+            em.persist(member);
             tx.commit();
         } catch (Exception e) {
             em.close();
