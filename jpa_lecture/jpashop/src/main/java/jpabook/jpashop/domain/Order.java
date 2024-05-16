@@ -19,11 +19,8 @@ public class Order {
     @Column(name = "order_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String memberId;
-
     private LocalDateTime orderDate;
-
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
 }

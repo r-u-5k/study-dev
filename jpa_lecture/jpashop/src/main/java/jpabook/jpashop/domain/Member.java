@@ -13,7 +13,7 @@ import lombok.*;
 @Entity
 public class Member {
     @Id
-    @Column(name = "user_id")
+    @Column(name = "member_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
