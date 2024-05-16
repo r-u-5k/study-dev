@@ -1,19 +1,19 @@
 package jpabook.jpashop.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
+@ToString
+
 @Entity
 public class Member {
     @Id
-    @Column(name = "member_id")
+    @Column(name = "user_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;

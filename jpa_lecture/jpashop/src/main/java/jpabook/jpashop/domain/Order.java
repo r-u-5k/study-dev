@@ -1,14 +1,22 @@
 package jpabook.jpashop.domain;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@ToString
+
 @Entity
-@Table(name = "ORDERS")
+@Table(name = "orders")
 public class Order {
     @Id
-    @Column(name = "ORDER_ID")
+    @Column(name = "order_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
