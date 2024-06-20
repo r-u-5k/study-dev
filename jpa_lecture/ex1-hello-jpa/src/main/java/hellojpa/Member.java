@@ -3,14 +3,15 @@ package hellojpa;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 
 @Entity
-//@Table(name = "USER")
-public class Member {
+public class Member extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "member_id")
@@ -19,10 +20,7 @@ public class Member {
     @Column(name = "username")
     private String username;
 
-//    @Column(name = "team_id")
-//    private Long teamId;
-
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER) // 실무에서 사용 X
     @JoinColumn(name = "team_id")
     private Team team;
 
