@@ -1,6 +1,6 @@
 package jpabook.jpashop.controller;
 
-import jpabook.jpashop.domain.item.UpdateItemDto;
+import jpabook.jpashop.domain.UpdateItemDto;
 import jpabook.jpashop.domain.item.Book;
 import jpabook.jpashop.service.ItemService;
 import lombok.RequiredArgsConstructor;

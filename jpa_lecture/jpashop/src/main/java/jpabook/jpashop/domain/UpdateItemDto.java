@@ -1,10 +1,9 @@
-package jpabook.jpashop.domain.item;
+package jpabook.jpashop.domain;
 
 import lombok.*;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class UpdateItemDto {
