@@ -12,6 +12,7 @@ import lombok.Setter;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 
 @Entity
+@Table(name = "order_item")
 public class OrderItem {
     @Id
     @GeneratedValue
