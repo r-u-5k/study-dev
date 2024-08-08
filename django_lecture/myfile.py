@@ -1,3 +1,8 @@
-unsorted_list = [123, 5, 4, 14215, 2, 6, 12467, 1, 923, 991, 42]
-sorted_list = sorted(unsorted_list)
-print(sorted_list[:3])
+class Circle:
+    def __init__(self, radius=1):
+        self.radius = radius
+
+myCircle1 = Circle(20)
+myCircle2 = Circle(radius=20)
+print(myCircle1.radius)
+print(myCircle2.radius)
