@@ -1,6 +1,6 @@
 package pack;
 
-import pack.a.*;
+import pack.a.User;
 
 public class PackageMain2 {
 

@@ -23,6 +23,6 @@ public class Book {
     }
 
     void displayInfo() {
-        System.out.println("제목: " + title + ", 저자: " +author+ ", 페이지: " + page);
+        System.out.println("제목: " + title + ", 저자: " + author + ", 페이지: " + page);
     }
 }

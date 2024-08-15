@@ -7,8 +7,8 @@ public class VarChange2 {
         dataA.value = 10;
         Data dataB = dataA;
 
-        System.out.println("dataA 참조값="+ dataA);
-        System.out.println("dataB 참조값="+ dataB);
+        System.out.println("dataA 참조값=" + dataA);
+        System.out.println("dataB 참조값=" + dataB);
         System.out.println("dataA.value = " + dataA.value);
         System.out.println("dataB.value = " + dataB.value);
 

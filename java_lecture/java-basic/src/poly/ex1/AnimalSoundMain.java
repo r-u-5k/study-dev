@@ -1,7 +1,5 @@
 package poly.ex1;
 
-import poly.ex2.Duck;
-
 public class AnimalSoundMain {
 
     public static void main(String[] args) {

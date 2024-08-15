@@ -15,6 +15,6 @@ public class Item {
 
     //이름:JAVA, 가격:10000
     public void print() {
-        System.out.println("이름:" + name +", 가격:" + price);
+        System.out.println("이름:" + name + ", 가격:" + price);
     }
 }
