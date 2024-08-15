@@ -96,6 +96,14 @@
         "documentation": {}
     },
     {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -200,34 +208,25 @@
         "kind": 5,
         "importPath": "my_site.my_app.urls",
         "description": "my_site.my_app.urls",
-        "peekOfCode": "urlpatterns = [\n    path('<int:num_page>/', views.num_page_view, name='num_page_view'),\n    path('<str:topic>/', views.news_view, name='news_view'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", views.simple_view), \n    path(\"variable/\", views.variable_view)\n]",
         "detail": "my_site.my_app.urls",
         "documentation": {}
     },
     {
-        "label": "news_view",
+        "label": "simple_view",
         "kind": 2,
         "importPath": "my_site.my_app.views",
         "description": "my_site.my_app.views",
-        "peekOfCode": "def news_view(request, topic):\n    try:\n        return HttpResponse(articles[topic])\n    except:\n        raise Http404(\"404 GENERIC ERROR\")\ndef num_page_view(request, num_page):\n    topics_list = list(articles.keys())\n    topic = topics_list[num_page]\n    return HttpResponseRedirect(reverse('news_view', args=[topic]))",
+        "peekOfCode": "def simple_view(request):\n    # my_app/templates/my_app/example.html\n    return render(request, \"my_app/example.html\")\ndef variable_view(request):\n    my_var = {\n        \"first_name\": \"RosaLind\",\n        \"last_name\": \"franKlin\",\n        \"some_list\": [1, 2, 3],\n        \"some_dict\": {\"inside_key\": \"inside_value\"},\n    }",
         "detail": "my_site.my_app.views",
         "documentation": {}
     },
     {
-        "label": "num_page_view",
+        "label": "variable_view",
         "kind": 2,
         "importPath": "my_site.my_app.views",
         "description": "my_site.my_app.views",
-        "peekOfCode": "def num_page_view(request, num_page):\n    topics_list = list(articles.keys())\n    topic = topics_list[num_page]\n    return HttpResponseRedirect(reverse('news_view', args=[topic]))",
-        "detail": "my_site.my_app.views",
-        "documentation": {}
-    },
-    {
-        "label": "articles",
-        "kind": 5,
-        "importPath": "my_site.my_app.views",
-        "description": "my_site.my_app.views",
-        "peekOfCode": "articles = {\n    \"sports\": \"Sports Page\",\n    \"finance\": \"Finance Page\",\n    \"politics\": \"Politics Page\"\n}\ndef news_view(request, topic):\n    try:\n        return HttpResponse(articles[topic])\n    except:\n        raise Http404(\"404 GENERIC ERROR\")",
+        "peekOfCode": "def variable_view(request):\n    my_var = {\n        \"first_name\": \"RosaLind\",\n        \"last_name\": \"franKlin\",\n        \"some_list\": [1, 2, 3],\n        \"some_dict\": {\"inside_key\": \"inside_value\"},\n    }\n    return render(request, \"my_app/variable.html\", context=my_var)",
         "detail": "my_site.my_app.views",
         "documentation": {}
     },
@@ -254,7 +253,7 @@
         "kind": 5,
         "importPath": "my_site.my_site.settings",
         "description": "my_site.my_site.settings",
-        "peekOfCode": "SECRET_KEY = 'django-insecure-k)5%11f40o7bq%w-kct3m^=i^w)-a_-ya)f)v0v_+@-9^wn+$h'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-k)5%11f40o7bq%w-kct3m^=i^w)-a_-ya)f)v0v_+@-9^wn+$h'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'my_app.apps.MyAppConfig',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',",
         "detail": "my_site.my_site.settings",
         "documentation": {}
     },
@@ -263,7 +262,7 @@
         "kind": 5,
         "importPath": "my_site.my_site.settings",
         "description": "my_site.my_site.settings",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'my_app.apps.MyAppConfig',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',",
         "detail": "my_site.my_site.settings",
         "documentation": {}
     },
@@ -272,7 +271,7 @@
         "kind": 5,
         "importPath": "my_site.my_site.settings",
         "description": "my_site.my_site.settings",
-        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n]",
+        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'my_app.apps.MyAppConfig',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
         "detail": "my_site.my_site.settings",
         "documentation": {}
     },
@@ -281,7 +280,7 @@
         "kind": 5,
         "importPath": "my_site.my_site.settings",
         "description": "my_site.my_site.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n]\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',",
+        "peekOfCode": "INSTALLED_APPS = [\n    'my_app.apps.MyAppConfig',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n]\nMIDDLEWARE = [",
         "detail": "my_site.my_site.settings",
         "documentation": {}
     },
@@ -299,7 +298,7 @@
         "kind": 5,
         "importPath": "my_site.my_site.settings",
         "description": "my_site.my_site.settings",
-        "peekOfCode": "ROOT_URLCONF = 'my_site.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
+        "peekOfCode": "ROOT_URLCONF = 'my_site.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [os.path.join(BASE_DIR,'templates/')],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
         "detail": "my_site.my_site.settings",
         "documentation": {}
     },
@@ -308,7 +307,7 @@
         "kind": 5,
         "importPath": "my_site.my_site.settings",
         "description": "my_site.my_site.settings",
-        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
+        "peekOfCode": "TEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [os.path.join(BASE_DIR,'templates/')],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',\n                'django.contrib.auth.context_processors.auth',",
         "detail": "my_site.my_site.settings",
         "documentation": {}
     },
