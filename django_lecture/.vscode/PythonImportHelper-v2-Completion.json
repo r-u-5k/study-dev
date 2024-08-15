@@ -104,6 +104,14 @@
         "documentation": {}
     },
     {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -208,16 +216,16 @@
         "kind": 5,
         "importPath": "my_site.my_app.urls",
         "description": "my_site.my_app.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"\", views.simple_view), \n    path(\"variable/\", views.variable_view)\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", views.example_view,name='example'), \n    path(\"variable/\", views.variable_view,name='variable')\n]",
         "detail": "my_site.my_app.urls",
         "documentation": {}
     },
     {
-        "label": "simple_view",
+        "label": "example_view",
         "kind": 2,
         "importPath": "my_site.my_app.views",
         "description": "my_site.my_app.views",
-        "peekOfCode": "def simple_view(request):\n    # my_app/templates/my_app/example.html\n    return render(request, \"my_app/example.html\")\ndef variable_view(request):\n    my_var = {\n        \"first_name\": \"RosaLind\",\n        \"last_name\": \"franKlin\",\n        \"some_list\": [1, 2, 3],\n        \"some_dict\": {\"inside_key\": \"inside_value\"},\n    }",
+        "peekOfCode": "def example_view(request):\n    # my_app/templates/my_app/example.html\n    return render(request, \"my_app/example.html\")\ndef variable_view(request):\n    my_var = {\n        \"first_name\": \"RosaLind\",\n        \"last_name\": \"franKlin\",\n        \"some_list\": [1, 2, 3],\n        \"some_dict\": {\"inside_key\": \"inside_value\"},\n    }",
         "detail": "my_site.my_app.views",
         "documentation": {}
     },
@@ -397,7 +405,16 @@
         "kind": 5,
         "importPath": "my_site.my_site.urls",
         "description": "my_site.my_site.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('my_app/', include('my_app.urls')),\n    path('', views.home_view)\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('my_app/', include('my_app.urls')),\n    path('', views.home_view),\n]\nhandler404 = 'my_site.views.my_custom_page_not_found_view'",
+        "detail": "my_site.my_site.urls",
+        "documentation": {}
+    },
+    {
+        "label": "handler404",
+        "kind": 5,
+        "importPath": "my_site.my_site.urls",
+        "description": "my_site.my_site.urls",
+        "peekOfCode": "handler404 = 'my_site.views.my_custom_page_not_found_view'",
         "detail": "my_site.my_site.urls",
         "documentation": {}
     },
@@ -406,7 +423,16 @@
         "kind": 2,
         "importPath": "my_site.my_site.views",
         "description": "my_site.my_site.views",
-        "peekOfCode": "def home_view(request):\n    return HttpResponse(\"HOME VIEW\")",
+        "peekOfCode": "def home_view(request):\n    return HttpResponse(\"HOME VIEW\")\ndef my_custom_page_not_found_view(request, exception):\n    return render(request,'error_view.html',status=404)",
+        "detail": "my_site.my_site.views",
+        "documentation": {}
+    },
+    {
+        "label": "my_custom_page_not_found_view",
+        "kind": 2,
+        "importPath": "my_site.my_site.views",
+        "description": "my_site.my_site.views",
+        "peekOfCode": "def my_custom_page_not_found_view(request, exception):\n    return render(request,'error_view.html',status=404)",
         "detail": "my_site.my_site.views",
         "documentation": {}
     },

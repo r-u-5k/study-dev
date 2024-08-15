@@ -4,7 +4,7 @@ from django.urls import reverse
 
 
 # Create your views here.
-def simple_view(request):
+def example_view(request):
     # my_app/templates/my_app/example.html
     return render(request, "my_app/example.html")
 
