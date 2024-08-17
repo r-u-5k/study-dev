@@ -144,6 +144,22 @@
         "documentation": {}
     },
     {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -750,7 +766,7 @@
         "kind": 5,
         "importPath": "my_site1.my_site1.urls",
         "description": "my_site1.my_site1.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"admin/\", admin.site.urls),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"office/\", include('office.urls'))\n]",
         "detail": "my_site1.my_site1.urls",
         "documentation": {}
     },
@@ -797,6 +813,24 @@
         "description": "my_site1.office.models",
         "peekOfCode": "class Patient(models.Model):\n    first_name = models.CharField(max_length=30)\n    last_name = models.CharField(max_length=30)\n    age = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(120)])\n    heartrate = models.IntegerField(default=60, validators=[MinValueValidator(1), MaxValueValidator(300)])\n    def __str__(self):\n        return f\"{self.last_name}, {self.first_name} is {self.age} years old.\"",
         "detail": "my_site1.office.models",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "my_site1.office.urls",
+        "description": "my_site1.office.urls",
+        "peekOfCode": "urlpatterns = [\n    path('', views.list_patients, name='list_patients')\n]",
+        "detail": "my_site1.office.urls",
+        "documentation": {}
+    },
+    {
+        "label": "list_patients",
+        "kind": 2,
+        "importPath": "my_site1.office.views",
+        "description": "my_site1.office.views",
+        "peekOfCode": "def list_patients(request):\n    all_patients = models.Patient.objects.all()\n    return render(request, \"office/list.html\", context={\"patients\": all_patients})",
+        "detail": "my_site1.office.views",
         "documentation": {}
     },
     {
