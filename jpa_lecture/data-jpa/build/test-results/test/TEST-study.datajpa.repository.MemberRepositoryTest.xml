@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="study.datajpa.repository.MemberRepositoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-08-20T11:01:05" hostname="DESKTOP-JIN" time="1.539">
+  <properties/>
+  <testcase name="findByNames()" classname="study.datajpa.repository.MemberRepositoryTest" time="1.539"/>
+  <system-out><![CDATA[20:00:54.240 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [study.datajpa.repository.MemberRepositoryTest]: MemberRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:00:54.352 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration study.datajpa.DataJpaApplication for test class study.datajpa.repository.MemberRepositoryTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.2)
+
+2024-08-20T20:00:54.867+09:00  INFO 14856 --- [    Test worker] s.d.repository.MemberRepositoryTest      : Starting MemberRepositoryTest using Java 17.0.10 with PID 14856 (started by Jin in C:\Dev\Repositories\OnlineLecture\jpa_lecture\data-jpa)
+2024-08-20T20:00:54.870+09:00  INFO 14856 --- [    Test worker] s.d.repository.MemberRepositoryTest      : No active profile set, falling back to 1 default profile: "default"
+2024-08-20T20:00:55.922+09:00  INFO 14856 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-20T20:00:56.050+09:00  INFO 14856 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 108 ms. Found 2 JPA repository interfaces.
+2024-08-20T20:00:58.116+09:00  INFO 14856 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-20T20:00:58.313+09:00  INFO 14856 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-20T20:00:58.400+09:00  INFO 14856 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-20T20:00:59.332+09:00  INFO 14856 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-20T20:00:59.418+09:00  INFO 14856 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-20T20:00:59.599+09:00  INFO 14856 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:tcp://localhost/~/datajpa user=SA
+2024-08-20T20:00:59.604+09:00  INFO 14856 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-20T20:01:01.614+09:00  INFO 14856 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-20T20:01:01.644+09:00 DEBUG 14856 --- [    Test worker] org.hibernate.SQL                        : 
+    ?[34mdrop?[0m ?[34mtable?[0m ?[34mif?[0m ?[34mexists?[0m ?[34mmember?[0m ?[34mcascade?[0m 
+2024-08-20T20:01:01.652+09:00  INFO 14856 --- [    Test worker] p6spy                                    : #1724151661652 | took 1ms | statement | connection 1| url jdbc:h2:tcp://localhost/~/datajpa
+
+    drop table if exists member cascade 
+
+    drop table if exists member cascade ;
+2024-08-20T20:01:01.652+09:00 DEBUG 14856 --- [    Test worker] org.hibernate.SQL                        : 
+    ?[34mdrop?[0m ?[34mtable?[0m ?[34mif?[0m ?[34mexists?[0m team ?[34mcascade?[0m 
+2024-08-20T20:01:01.654+09:00  INFO 14856 --- [    Test worker] p6spy                                    : #1724151661654 | took 0ms | statement | connection 1| url jdbc:h2:tcp://localhost/~/datajpa
+
+    drop table if exists team cascade 
+
+    drop table if exists team cascade ;
+2024-08-20T20:01:01.654+09:00 DEBUG 14856 --- [    Test worker] org.hibernate.SQL                        : 
+    ?[34mdrop?[0m ?[34msequence?[0m ?[34mif?[0m ?[34mexists?[0m member_seq
+2024-08-20T20:01:01.656+09:00  INFO 14856 --- [    Test worker] p6spy                                    : #1724151661656 | took 0ms | statement | connection 1| url jdbc:h2:tcp://localhost/~/datajpa
+
+    drop sequence if exists member_seq
+
+    drop sequence if exists member_seq;
+2024-08-20T20:01:01.656+09:00 DEBUG 14856 --- [    Test worker] org.hibernate.SQL                        : 
+    ?[34mdrop?[0m ?[34msequence?[0m ?[34mif?[0m ?[34mexists?[0m team_seq
+2024-08-20T20:01:01.657+09:00  INFO 14856 --- [    Test worker] p6spy                                    : #1724151661657 | took 0ms | statement | connection 1| url jdbc:h2:tcp://localhost/~/datajpa
+
+    drop sequence if exists team_seq
+
+    drop sequence if exists team_seq;
+2024-08-20T20:01:01.669+09:00 DEBUG 14856 --- [    Test worker] org.hibernate.SQL                        : 
+    ?[34mcreate?[0m ?[34msequence?[0m member_seq ?[34mstart?[0m ?[34mwith?[0m 1 ?[34mincrement?[0m ?[34mby?[0m 50
+2024-08-20T20:01:01.671+09:00  INFO 14856 --- [    Test worker] p6spy                                    : #1724151661671 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/datajpa
+
+    create sequence member_seq start with 1 increment by 50
+
+    create sequence member_seq start with 1 increment by 50;
+2024-08-20T20:01:01.671+09:00 DEBUG 14856 --- [    Test worker] org.hibernate.SQL                        : 
+    ?[34mcreate?[0m ?[34msequence?[0m team_seq ?[34mstart?[0m ?[34mwith?[0m 1 ?[34mincrement?[0m ?[34mby?[0m 50
+2024-08-20T20:01:01.672+09:00  INFO 14856 --- [    Test worker] p6spy                                    : #1724151661672 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/datajpa
+
+    create sequence team_seq start with 1 increment by 50
+
+    create sequence team_seq start with 1 increment by 50;
+2024-08-20T20:01:01.678+09:00 DEBUG 14856 --- [    Test worker] org.hibernate.SQL                        : 
+    ?[34mcreate?[0m ?[34mtable?[0m ?[34mmember?[0m (
+        age ?[34minteger?[0m ?[34mnot?[0m ?[34mnull?[0m,
+        member_id ?[34mbigint?[0m ?[34mnot?[0m ?[34mnull?[0m,
+        team_id ?[34mbigint?[0m,
+        username ?[34mvarchar?[0m(255),
+        ?[34mprimary?[0m ?[34mkey?[0m (member_id)
+    )
+2024-08-20T20:01:01.680+09:00  INFO 14856 --- [    Test worker] p6spy                                    : #1724151661680 | took 1ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/datajpa
+
+    create table member (
+        age integer not null,
+        member_id bigint not null,
+        team_id bigint,
+        username varchar(255),
+        primary key (member_id)
+    )
+
+    create table member (
+        age integer not null,
+        member_id bigint not null,
+        team_id bigint,
+        username varchar(255),
+        primary key (member_id)
+    );
+2024-08-20T20:01:01.680+09:00 DEBUG 14856 --- [    Test worker] org.hibernate.SQL                        : 
+    ?[34mcreate?[0m ?[34mtable?[0m team (
+        team_id ?[34mbigint?[0m ?[34mnot?[0m ?[34mnull?[0m,
+        name ?[34mvarchar?[0m(255),
+        ?[34mprimary?[0m ?[34mkey?[0m (team_id)
+    )
+2024-08-20T20:01:01.682+09:00  INFO 14856 --- [    Test worker] p6spy                                    : #1724151661682 | took 1ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/datajpa
+
+    create table team (
+        team_id bigint not null,
+        name varchar(255),
+        primary key (team_id)
+    )
+
+    create table team (
+        team_id bigint not null,
+        name varchar(255),
+        primary key (team_id)
+    );
+2024-08-20T20:01:01.683+09:00 DEBUG 14856 --- [    Test worker] org.hibernate.SQL                        : 
+    ?[34malter?[0m ?[34mtable?[0m ?[34mif?[0m ?[34mexists?[0m ?[34mmember?[0m 
+       ?[34madd?[0m ?[34mconstraint?[0m FKcjte2jn9pvo9ud2hyfgwcja0k 
+       ?[34mforeign?[0m ?[34mkey?[0m (team_id) 
+       ?[34mreferences?[0m team
+2024-08-20T20:01:01.686+09:00  INFO 14856 --- [    Test worker] p6spy                                    : #1724151661686 | took 2ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/datajpa
+
+    alter table if exists member 
+       add constraint FKcjte2jn9pvo9ud2hyfgwcja0k 
+       foreign key (team_id) 
+       references team
+
+    alter table if exists member 
+       add constraint FKcjte2jn9pvo9ud2hyfgwcja0k 
+       foreign key (team_id) 
+       references team;
+2024-08-20T20:01:01.691+09:00  INFO 14856 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-20T20:01:01.939+09:00  WARN 14856 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-20T20:01:04.016+09:00  INFO 14856 --- [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-08-20T20:01:05.481+09:00  INFO 14856 --- [    Test worker] s.d.repository.MemberRepositoryTest      : Started MemberRepositoryTest in 10.974 seconds (process running for 11.959)
+2024-08-20T20:01:06.837+09:00 DEBUG 14856 --- [    Test worker] org.hibernate.SQL                        : 
+    ?[34mselect?[0m
+        ?[34mnext?[0m ?[34mvalue?[0m ?[34mfor?[0m member_seq
+2024-08-20T20:01:06.860+09:00  INFO 14856 --- [    Test worker] p6spy                                    : #1724151666860 | took 12ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/datajpa
+select next value for member_seq
+select next value for member_seq;
+2024-08-20T20:01:06.885+09:00 DEBUG 14856 --- [    Test worker] org.hibernate.SQL                        : 
+    ?[34mselect?[0m
+        ?[34mnext?[0m ?[34mvalue?[0m ?[34mfor?[0m member_seq
+2024-08-20T20:01:06.887+09:00  INFO 14856 --- [    Test worker] p6spy                                    : #1724151666886 | took 0ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/datajpa
+select next value for member_seq
+select next value for member_seq;
+2024-08-20T20:01:06.979+09:00 DEBUG 14856 --- [    Test worker] org.hibernate.SQL                        : 
+    ?[34minsert?[0m 
+    ?[34minto?[0m
+        ?[34mmember?[0m
+        (age, team_id, username, member_id) 
+    ?[34mvalues?[0m
+        (?, ?, ?, ?)
+2024-08-20T20:01:06.984+09:00  INFO 14856 --- [    Test worker] p6spy                                    : #1724151666984 | took 0ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/datajpa
+insert into member (age,team_id,username,member_id) values (?,?,?,?)
+insert into member (age,team_id,username,member_id) values (10,NULL,'member1',1);
+2024-08-20T20:01:06.986+09:00 DEBUG 14856 --- [    Test worker] org.hibernate.SQL                        : 
+    ?[34minsert?[0m 
+    ?[34minto?[0m
+        ?[34mmember?[0m
+        (age, team_id, username, member_id) 
+    ?[34mvalues?[0m
+        (?, ?, ?, ?)
+2024-08-20T20:01:06.987+09:00  INFO 14856 --- [    Test worker] p6spy                                    : #1724151666987 | took 0ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/datajpa
+insert into member (age,team_id,username,member_id) values (?,?,?,?)
+insert into member (age,team_id,username,member_id) values (20,NULL,'member2',2);
+2024-08-20T20:01:07.026+09:00 DEBUG 14856 --- [    Test worker] org.hibernate.SQL                        : 
+    ?[34mselect?[0m
+        m1_0.member_id,
+        m1_0.age,
+        m1_0.team_id,
+        m1_0.username 
+    ?[34mfrom?[0m
+        ?[34mmember?[0m m1_0 
+    ?[34mwhere?[0m
+        m1_0.username ?[34min?[0m (?, ?)
+2024-08-20T20:01:07.028+09:00  INFO 14856 --- [    Test worker] p6spy                                    : #1724151667028 | took 0ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/datajpa
+select m1_0.member_id,m1_0.age,m1_0.team_id,m1_0.username from member m1_0 where m1_0.username in (?,?)
+select m1_0.member_id,m1_0.age,m1_0.team_id,m1_0.username from member m1_0 where m1_0.username in ('member1','member2');
+member = Member(id=1, username=member1, age=10)
+member = Member(id=2, username=member2, age=20)
+2024-08-20T20:01:07.049+09:00  INFO 14856 --- [    Test worker] p6spy                                    : #1724151667049 | took 0ms | commit | connection 3| url jdbc:h2:tcp://localhost/~/datajpa
+
+;
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
