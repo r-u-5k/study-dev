@@ -1,5 +1,6 @@
 package study.datajpa.repository;
 
+import jakarta.persistence.EntityManager;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 @Transactional
 public class MemberRepositoryTest {
-    @Autowired
-    MemberRepository memberRepository;
+    @Autowired MemberRepository memberRepository;
+    @Autowired EntityManager em;
 
     @Test
     public void testMember() {
@@ -86,5 +87,26 @@ public class MemberRepositoryTest {
 //        assertThat(page.getTotalPages()).isEqualTo(2); //전체 페이지 번호
         assertThat(page.isFirst()).isTrue(); //첫 번째 항목인가?
         assertThat(page.hasNext()).isTrue(); //다음 페이지가 있는가?
+    }
+
+    @Test
+    public void callCustom() {
+        List<Member> result = memberRepository.findMemberCustom();
+    }
+
+    @Test
+    public void JpaEventBaseEntity() throws Exception {
+        Member member = new Member("member1");
+        memberRepository.save(member); //@PrePersist
+
+        Thread.sleep(100);
+        member.setUsername("member2");
+
+        em.flush();
+        em.clear();
+
+        Member findMember = memberRepository.findById(member.getId()).get();
+        System.out.println("findMember.getCreatedDate() = " + findMember.getCreatedDate());
+        System.out.println("findMember.getLastModifiedDate() = " + findMember.getLastModifiedDate());
     }
 }

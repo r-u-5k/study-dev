@@ -10,7 +10,7 @@ import study.datajpa.entity.Member;
 
 import java.util.List;
 
-public interface MemberRepository extends JpaRepository<Member, Long> {
+public interface MemberRepository extends JpaRepository<Member, Long>, MemberRepositoryCustom {
     List<Member> findByUsernameAndAgeGreaterThan(String username, int age);
 
     @Query(name = "Member.findByUsername")
@@ -39,5 +39,5 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
 
     //메서드 이름 쿼리에서 특히 편리함
     @EntityGraph(attributePaths = {"team"})
-    List<Member> findByUsernameByEntityGraph(String username);
+    List<Member> findEntityGraphByUsername(String username);
 }
