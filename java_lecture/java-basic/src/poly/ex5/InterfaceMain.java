@@ -8,11 +8,11 @@ public class InterfaceMain {
 
         Cat cat = new Cat();
         Dog dog = new Dog();
-        Caw caw = new Caw();
+        Cow Cow = new Cow();
 
         soundAnimal(cat);
         soundAnimal(dog);
-        soundAnimal(caw);
+        soundAnimal(Cow);
     }
 
     //변하지 않는 부분

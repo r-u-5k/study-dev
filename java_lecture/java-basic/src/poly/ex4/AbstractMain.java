@@ -8,15 +8,15 @@ public class AbstractMain {
 
         Dog dog = new Dog();
         Cat cat = new Cat();
-        Caw caw = new Caw();
+        Cow Cow = new Cow();
 
         soundAnimal(dog);
         soundAnimal(cat);
-        soundAnimal(caw);
+        soundAnimal(Cow);
 
         moveAnimal(dog);
         moveAnimal(cat);
-        moveAnimal(caw);
+        moveAnimal(Cow);
     }
 
     //변하지 않는 부분

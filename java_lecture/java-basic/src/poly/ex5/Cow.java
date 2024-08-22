@@ -1,6 +1,6 @@
-package poly.ex4;
+package poly.ex5;
 
-public class Caw extends AbstractAnimal {
+public class Cow implements InterfaceAnimal {
     @Override
     public void sound() {
         System.out.println("음매");

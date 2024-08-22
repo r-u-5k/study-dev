@@ -8,7 +8,7 @@ public class AbstractMain {
 
         Dog dog = new Dog();
         Cat cat = new Cat();
-        Caw caw = new Caw();
+        Cow Cow = new Cow();
         Duck duck = new Duck();
 
         cat.sound();
@@ -16,7 +16,7 @@ public class AbstractMain {
 
         soundAnimal(dog);
         soundAnimal(cat);
-        soundAnimal(caw);
+        soundAnimal(Cow);
         soundAnimal(duck);
     }
 

@@ -5,9 +5,9 @@ public class AnimalPolyMain2 {
     public static void main(String[] args) {
         Dog dog = new Dog();
         Cat cat = new Cat();
-        Caw caw = new Caw();
+        Cow Cow = new Cow();
         Duck duck = new Duck();
-        Animal[] animalArr = {dog, cat, caw, duck};
+        Animal[] animalArr = {dog, cat, Cow, duck};
 
         //변하지 않는 부분
         for (Animal animal : animalArr) {
