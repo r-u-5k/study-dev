@@ -17,6 +17,7 @@ public class Team extends JpaBaseEntity {
     @Column(name = "team_id")
     private Long id;
     private String name;
+
     @OneToMany(mappedBy = "team")
     List<Member> members = new ArrayList<>();
 

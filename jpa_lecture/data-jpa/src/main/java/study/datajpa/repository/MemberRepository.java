@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import study.datajpa.dto.UsernameOnly;
 import study.datajpa.entity.Member;
 
 import java.util.List;
@@ -40,4 +41,8 @@ public interface MemberRepository extends JpaRepository<Member, Long>, MemberRep
     //메서드 이름 쿼리에서 특히 편리함
     @EntityGraph(attributePaths = {"team"})
     List<Member> findEntityGraphByUsername(String username);
+
+    //엔티티 대신에 DTO를 편리하게 조회할 때 사용
+    //전체 엔티티가 아니라 만약 회원 이름만 딱 조회하고 싶으면?
+    List<UsernameOnly> findProjectionsByUsername(String username);
 }

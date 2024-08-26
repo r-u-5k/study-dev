@@ -7,11 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Slice;
 import org.springframework.data.domain.Sort;
 import org.springframework.transaction.annotation.Transactional;
 import study.datajpa.dto.MemberDto;
+import study.datajpa.dto.UsernameOnly;
 import study.datajpa.entity.Member;
+import study.datajpa.entity.Team;
 
 import java.util.List;
 
@@ -108,5 +109,23 @@ public class MemberRepositoryTest {
         Member findMember = memberRepository.findById(member.getId()).get();
         System.out.println("findMember.getCreatedDate() = " + findMember.getCreatedDate());
         System.out.println("findMember.getLastModifiedDate() = " + findMember.getLastModifiedDate());
+    }
+
+    @Test
+    public void projections() throws Exception {
+        Team teamA = new Team("teamA");
+        em.persist(teamA);
+        Member m1 = new Member("m1", 0, teamA);
+        Member m2 = new Member("m2", 0, teamA);
+        em.persist(m1);
+        em.persist(m2);
+
+        em.flush();
+        em.clear();
+
+        List<UsernameOnly> result = memberRepository.findProjectionsByUsername("m1");
+        System.out.println("result = " + result);
+
+        Assertions.assertThat(result.size()).isEqualTo(1);
     }
 }
